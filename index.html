@@ -16,8 +16,17 @@
 
     body {
       font-family: "Poppins", sans-serif;
-      background: #fafafa;
+      background: #fafafa url("assets/mandala-bg.png");
+      background-size: 300px 300px;
+      background-attachment: fixed;
+      background-repeat: repeat;
       color: #333;
+      transition: background 0.5s ease;
+    }
+
+    body:hover {
+      background-size: 320px 320px;
+      filter: brightness(1.02);
     }
 
     header {
@@ -25,6 +34,7 @@
       color: white;
       padding: 1rem;
       text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
 
     header img.logo {
@@ -54,9 +64,22 @@
 
     /* ---------- HERO SECTION ---------- */
     #home {
-      background: url("assets/banner.png") center/cover no-repeat;
+      background: #000;
       color: white;
-      padding: 100px 15px;
+      padding: 0;
+    }
+
+    #home img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    #home .overlay {
+      background: rgba(0, 0, 0, 0.55);
+      padding: 60px 15px;
+      position: relative;
+      top: -5px;
     }
 
     #home h2 {
@@ -73,10 +96,12 @@
       font-weight: 600;
       display: inline-block;
       margin-top: 15px;
+      transition: all 0.3s;
     }
 
     .join-btn:hover {
       background: #ffeb70;
+      transform: scale(1.05);
     }
 
     /* ---------- NEWS WHEEL ---------- */
@@ -121,6 +146,11 @@
       box-shadow: 0 0 8px rgba(0,0,0,0.1);
       padding: 20px;
       width: 300px;
+      transition: transform 0.3s;
+    }
+
+    .notice-card:hover {
+      transform: translateY(-5px);
     }
 
     .notice-card h3 {
@@ -159,27 +189,38 @@
     }
 
     /* ---------- GALLERY ---------- */
+    #gallery {
+      overflow: hidden;
+      position: relative;
+    }
+
     #gallery h2 {
       color: maroon;
       margin-bottom: 20px;
     }
 
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-      max-width: 900px;
-      margin: auto;
+    .gallery-track {
+      display: flex;
+      width: max-content;
+      animation: scrollGallery 40s linear infinite;
     }
 
-    .gallery-grid img {
-      width: 100%;
+    .gallery-track img {
+      width: 220px;
+      height: 150px;
+      margin: 10px;
       border-radius: 10px;
+      object-fit: cover;
       transition: transform 0.3s;
     }
 
-    .gallery-grid img:hover {
+    .gallery-track img:hover {
       transform: scale(1.05);
+    }
+
+    @keyframes scrollGallery {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
     }
 
     /* ---------- CONTACT ---------- */
@@ -198,6 +239,7 @@
       color: white;
       text-align: center;
       padding: 12px 0;
+      font-size: 0.9rem;
     }
 
     footer a {
@@ -235,9 +277,12 @@
 
   <!-- HOME -->
   <section id="home">
-    <h2>Welcome to Southeast Cultural Society</h2>
-    <p>Promoting art, culture, and unity since 2010.</p>
-    <a href="https://forms.gle/your-google-form-link" class="join-btn" target="_blank">Join Us</a>
+    <img src="assets/banner.png" alt="SCS Banner">
+    <div class="overlay">
+      <h2>Welcome to Southeast Cultural Society</h2>
+      <p>Promoting art, culture, and unity since 2010.</p>
+      <a href="https://forms.gle/your-google-form-link" class="join-btn" target="_blank">Join Us</a>
+    </div>
   </section>
 
   <!-- NOTICE BOARD -->
@@ -291,7 +336,11 @@
   <!-- GALLERY -->
   <section id="gallery">
     <h2>Gallery</h2>
-    <div class="gallery-grid">
+    <div class="gallery-track">
+      <img src="gallery/img1.png" alt="Event Photo 1">
+      <img src="gallery/img2.png" alt="Event Photo 2">
+      <img src="gallery/img3.png" alt="Event Photo 3">
+      <img src="gallery/img4.png" alt="Event Photo 4">
       <img src="gallery/img1.png" alt="Event Photo 1">
       <img src="gallery/img2.png" alt="Event Photo 2">
       <img src="gallery/img3.png" alt="Event Photo 3">
