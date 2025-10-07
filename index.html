@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Southeast Cultural Society | Since 2010</title>
+
+  <style>
+    /* ---------- BASIC RESET ---------- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #fafafa;
+      color: #333;
+    }
+
+    header {
+      background: maroon;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    header img.logo {
+      width: 90px;
+      height: auto;
+    }
+
+    nav {
+      margin-top: 0.5rem;
+    }
+
+    nav a {
+      color: #ffd700;
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      padding: 50px 15px;
+      text-align: center;
+    }
+
+    /* ---------- HERO SECTION ---------- */
+    #home {
+      background: url("assets/banner.png") center/cover no-repeat;
+      color: white;
+      padding: 100px 15px;
+    }
+
+    #home h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .join-btn {
+      background: gold;
+      color: maroon;
+      padding: 12px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-block;
+      margin-top: 15px;
+    }
+
+    .join-btn:hover {
+      background: #ffeb70;
+    }
+
+    /* ---------- NEWS WHEEL ---------- */
+    .news-wheel {
+      background: #222;
+      color: #fff;
+      overflow: hidden;
+      white-space: nowrap;
+      position: relative;
+      height: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .news-content {
+      display: inline-block;
+      animation: scroll 18s linear infinite;
+    }
+
+    @keyframes scroll {
+      from { transform: translateX(100%); }
+      to { transform: translateX(-100%); }
+    }
+
+    /* ---------- NOTICE BOARD ---------- */
+    #notice-board h2 {
+      margin-bottom: 20px;
+      color: maroon;
+    }
+
+    .notice-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .notice-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      padding: 20px;
+      width: 300px;
+    }
+
+    .notice-card h3 {
+      color: maroon;
+      margin-bottom: 8px;
+    }
+
+    .notice-card a {
+      display: inline-block;
+      margin-top: 8px;
+      color: white;
+      background: maroon;
+      padding: 6px 12px;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    .notice-card a:hover {
+      background: #b30000;
+    }
+
+    /* ---------- ABOUT ---------- */
+    #about {
+      background: #fff5f5;
+    }
+
+    #about h2 {
+      color: maroon;
+      margin-bottom: 20px;
+    }
+
+    #about p {
+      max-width: 800px;
+      margin: auto;
+      line-height: 1.7;
+    }
+
+    /* ---------- GALLERY ---------- */
+    #gallery h2 {
+      color: maroon;
+      margin-bottom: 20px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+    }
+
+    /* ---------- CONTACT ---------- */
+    #contact h2 {
+      color: maroon;
+      margin-bottom: 15px;
+    }
+
+    #contact p {
+      margin-bottom: 10px;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 12px 0;
+    }
+
+    footer a {
+      color: gold;
+      text-decoration: none;
+      margin: 0 6px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <img src="assets/logo.png" alt="Southeast Cultural Society Logo" class="logo">
+    <h1>Southeast Cultural Society</h1>
+    <p>Since 2010</p>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#notice-board">Notice Board</a>
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- NEWS WHEEL -->
+  <div class="news-wheel">
+    <div class="news-content">
+      📢 Registration open for Annual Cultural Fest 2025! — Dance Workshop this Friday — Photography Contest results announced — Join SCS to be part of our creative family!
+    </div>
+  </div>
+
+  <!-- HOME -->
+  <section id="home">
+    <h2>Welcome to Southeast Cultural Society</h2>
+    <p>Promoting art, culture, and unity since 2010.</p>
+    <a href="https://forms.gle/your-google-form-link" class="join-btn" target="_blank">Join Us</a>
+  </section>
+
+  <!-- NOTICE BOARD -->
+  <section id="notice-board">
+    <h2>Notice Board</h2>
+
+    <h3>Upcoming Events</h3>
+    <div class="notice-section" id="upcoming-events">
+      <div class="notice-card">
+        <h3>Cultural Fest 2025</h3>
+        <p>Date: January 15, 2025</p>
+        <p>Annual cultural celebration featuring music, dance, and art exhibitions.</p>
+        <a href="#">Register</a>
+      </div>
+
+      <div class="notice-card">
+        <h3>Art Workshop</h3>
+        <p>Date: November 12, 2025</p>
+        <p>Learn traditional painting and craft from senior artists.</p>
+        <a href="#">Join</a>
+      </div>
+    </div>
+
+    <h3 style="margin-top:40px;">Past Events</h3>
+    <div class="notice-section" id="past-events">
+      <div class="notice-card">
+        <h3>Annual Music Night 2024</h3>
+        <p>Date: December 2024</p>
+        <p>A night filled with performances by talented members of SCS.</p>
+      </div>
+
+      <div class="notice-card">
+        <h3>Drama Workshop</h3>
+        <p>Date: August 2024</p>
+        <p>Stage performance training and dramatic art sessions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>
+      The Southeast Cultural Society (SCS) was founded in 2010 to promote cultural awareness,
+      creativity, and artistic expression among students. We organize cultural festivals, art exhibitions,
+      workshops, and competitions that bring together talent from across the region. <br><br>
+      Our vision is to build a community that celebrates diversity and creativity through art and culture.
+    </p>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery">
+    <h2>Gallery</h2>
+    <div class="gallery-grid">
+      <img src="gallery/img1.jpg" alt="Event Photo 1">
+      <img src="gallery/img2.jpg" alt="Event Photo 2">
+      <img src="gallery/img3.jpg" alt="Event Photo 3">
+      <img src="gallery/img4.jpg" alt="Event Photo 4">
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: <a href="mailto:southeastculturalsociety@gmail.com">southeastculturalsociety@gmail.com</a></p>
+    <p>Follow us on 
+      <a href="#">Facebook</a> | 
+      <a href="#">Instagram</a> | 
+      <a href="#">YouTube</a>
+    </p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2010–2025 Southeast Cultural Society. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Optional dynamic event handling or news updates can go here
+    console.log("Southeast Cultural Society website loaded successfully.");
+  </script>
+</body>
+</html>
