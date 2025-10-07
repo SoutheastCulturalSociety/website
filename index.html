@@ -277,36 +277,23 @@
       100% { transform: translate(-50%, -50%) scale(0.95); }
     }
 
-    /* ---------- FALLING FLOWERS ---------- */
-    .falling-flowers {
+    /* ---------- PARTICLE BACKGROUND ---------- */
+    #particle-bg {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      pointer-events: none;
-      overflow: hidden;
       z-index: 0;
-    }
-
-    .falling-flowers img {
-      position: absolute;
-      width: 25px;
-      opacity: 0.3;
-      animation-name: fall;
-      animation-timing-function: linear;
-      animation-iteration-count: infinite;
-    }
-
-    @keyframes fall {
-      0% { transform: translateY(-50px) rotate(0deg); opacity: 0; }
-      50% { opacity: 0.5; }
-      100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+      pointer-events: none;
     }
   </style>
 </head>
 
 <body>
+  <!-- Particle Background Canvas -->
+  <canvas id="particle-bg"></canvas>
+
   <header>
     <img src="assets/logo.png" alt="Southeast Cultural Society Logo" class="logo">
     <h1>Southeast Cultural Society</h1>
@@ -400,17 +387,65 @@
     <p>&copy; 2010–2025 Southeast Cultural Society. All Rights Reserved.</p>
   </footer>
 
-  <!-- FALLING FLOWERS -->
-  <div class="falling-flowers">
-    <img src="assets/flower1.png" style="left:5%; animation-duration:12s; animation-delay:0s;">
-    <img src="assets/flower2.png" style="left:15%; animation-duration:15s; animation-delay:2s;">
-    <img src="assets/flower1.png" style="left:25%; animation-duration:18s; animation-delay:4s;">
-    <img src="assets/flower2.png" style="left:35%; animation-duration:14s; animation-delay:1s;">
-    <img src="assets/flower1.png" style="left:45%; animation-duration:16s; animation-delay:3s;">
-    <img src="assets/flower2.png" style="left:55%; animation-duration:17s; animation-delay:2s;">
-    <img src="assets/flower1.png" style="left:65%; animation-duration:19s; animation-delay:5s;">
-    <img src="assets/flower2.png" style="left:75%; animation-duration:13s; animation-delay:0s;">
-    <img src="assets/flower1.png" style="left:85%; animation-duration:15s; animation-delay:4s;">
-  </div>
+  <!-- ---------- PARTICLE JS ---------- -->
+  <script>
+    const canvas = document.getElementById("particle-bg");
+    const ctx = canvas.getContext("2d");
+
+    let particlesArray;
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener("resize", resizeCanvas);
+    resizeCanvas();
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 3 + 1;
+        this.speedY = Math.random() * 1 + 0.2;
+        this.speedX = Math.random() * 0.5 - 0.25;
+        this.opacity = Math.random() * 0.3 + 0.1;
+      }
+      update() {
+        this.y += this.speedY;
+        this.x += this.speedX;
+        if (this.y > canvas.height) {
+          this.y = -this.size;
+          this.x = Math.random() * canvas.width;
+        }
+        if (this.x > canvas.width) this.x = 0;
+        if (this.x < 0) this.x = canvas.width;
+      }
+      draw() {
+        ctx.fillStyle = "rgba(255, 182, 193," + this.opacity + ")"; // soft pink particles
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    function init() {
+      particlesArray = [];
+      const numberOfParticles = Math.floor(window.innerWidth / 10);
+      for (let i = 0; i < numberOfParticles; i++) {
+        particlesArray.push(new Particle());
+      }
+    }
+    init();
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let particle of particlesArray) {
+        particle.update();
+        particle.draw();
+      }
+      requestAnimationFrame(animate);
+    }
+    animate();
+  </script>
 </body>
 </html>
