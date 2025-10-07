@@ -22,7 +22,7 @@
       color: #333;
       position: relative;
       overflow-x: hidden;
-      background: radial-gradient(circle at center, #f5f0ff, #e0d4ff);
+      background: #f5f0ff;
       min-height: 100vh;
     }
 
@@ -250,26 +250,33 @@
       text-decoration: underline;
     }
 
-    /* ---------- LIVE MANDALA BACKGROUND ---------- */
+    /* ---------- MOVING MANDALA BACKGROUND ---------- */
     body::before {
       content: "";
       position: fixed;
       top: 50%;
       left: 50%;
-      width: 200%;
-      height: 200%;
-      background: conic-gradient(#ff9999 0%, #99ccff 25%, #ffcc99 50%, #cc99ff 75%, #ff9999 100%);
+      width: 250%;
+      height: 250%;
+      background: radial-gradient(circle at center, #f0e6ff 10%, #d0bfff 40%, #ffd9b3 70%, #f0e6ff 90%);
       border-radius: 50%;
-      animation: rotateMandala 60s linear infinite;
       transform: translate(-50%, -50%);
       z-index: 0;
-      opacity: 0.2;
+      opacity: 0.15;
+      animation: rotateMandala 90s linear infinite, pulseMandala 6s ease-in-out infinite alternate;
     }
 
     @keyframes rotateMandala {
       from { transform: translate(-50%, -50%) rotate(0deg); }
       to { transform: translate(-50%, -50%) rotate(360deg); }
     }
+
+    @keyframes pulseMandala {
+      0% { transform: translate(-50%, -50%) scale(0.95); }
+      50% { transform: translate(-50%, -50%) scale(1.05); }
+      100% { transform: translate(-50%, -50%) scale(0.95); }
+    }
+
   </style>
 </head>
 
@@ -323,21 +330,6 @@
         <a href="#">Join</a>
       </div>
     </div>
-
-    <h3 style="margin-top:40px;">Past Events</h3>
-    <div class="notice-section" id="past-events">
-      <div class="notice-card">
-        <h3>Annual Music Night 2024</h3>
-        <p>Date: December 2024</p>
-        <p>A night filled with performances by talented members of SCS.</p>
-      </div>
-
-      <div class="notice-card">
-        <h3>Drama Workshop</h3>
-        <p>Date: August 2024</p>
-        <p>Stage performance training and dramatic art sessions.</p>
-      </div>
-    </div>
   </section>
 
   <!-- ABOUT -->
@@ -355,6 +347,14 @@
   <section id="gallery">
     <h2>Gallery</h2>
     <div class="gallery-track">
+      <img src="gallery/img1.png" alt="Event Photo 1">
+      <img src="gallery/img2.png" alt="Event Photo 2">
+      <img src="gallery/img3.png" alt="Event Photo 3">
+      <img src="gallery/img4.png" alt="Event Photo 4">
+      <img src="gallery/img1.png" alt="Event Photo 1">
+      <img src="gallery/img2.png" alt="Event Photo 2">
+      <img src="gallery/img3.png" alt="Event Photo 3">
+      <img src="gallery/img4.png" alt="Event Photo 4">
       <img src="gallery/img1.png" alt="Event Photo 1">
       <img src="gallery/img2.png" alt="Event Photo 2">
       <img src="gallery/img3.png" alt="Event Photo 3">
