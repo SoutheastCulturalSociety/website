@@ -6,7 +6,7 @@
   <title>Southeast Cultural Society | Since 2010</title>
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
   <style>
     /* ---------- BASIC RESET ---------- */
@@ -19,25 +19,27 @@
 
     body {
       font-family: "Poppins", sans-serif;
-      color: #333;
+      color: #fff;
       position: relative;
       overflow-x: hidden;
-      background: #f5f0ff;
       min-height: 100vh;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
     }
 
     header {
-      background: rgba(128,0,0,0.85);
-      color: white;
+      background: rgba(0, 0, 0, 0.6);
+      color: #00fff7;
       padding: 1rem;
       text-align: center;
       position: relative;
       z-index: 2;
+      box-shadow: 0 0 15px rgba(0,255,255,0.3);
     }
 
     header img.logo {
       width: 90px;
       height: auto;
+      filter: drop-shadow(0 0 5px #00fff7);
     }
 
     nav {
@@ -45,18 +47,20 @@
     }
 
     nav a {
-      color: #ffd700;
+      color: #00fff7;
       margin: 0 12px;
       text-decoration: none;
       font-weight: 600;
+      transition: 0.3s;
     }
 
     nav a:hover {
+      color: #ff61ff;
       text-decoration: underline;
     }
 
     section {
-      padding: 50px 15px;
+      padding: 60px 15px;
       text-align: center;
       position: relative;
       z-index: 2;
@@ -66,58 +70,64 @@
     #home {
       position: relative;
       text-align: center;
-      color: white;
-      min-height: 300px;
+      min-height: 400px;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
     #home .overlay {
-      background: rgba(0,0,0,0.4);
-      padding: 40px 20px;
-      border-radius: 15px;
+      background: rgba(0,0,0,0.5);
+      padding: 50px 25px;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0,255,255,0.5);
+      backdrop-filter: blur(5px);
     }
 
     #home h2 {
-      font-size: 2rem;
-      margin-bottom: 10px;
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      text-shadow: 0 0 10px #00fff7, 0 0 20px #ff61ff;
     }
 
     .join-btn {
-      background: gold;
-      color: maroon;
-      padding: 12px 25px;
-      border-radius: 8px;
+      background: #00fff7;
+      color: #0c0c0c;
+      padding: 15px 30px;
+      border-radius: 12px;
       text-decoration: none;
-      font-weight: 600;
+      font-weight: 700;
       display: inline-block;
-      margin-top: 15px;
+      margin-top: 20px;
+      box-shadow: 0 0 15px #00fff7, 0 0 30px #ff61ff;
       transition: all 0.3s;
     }
 
     .join-btn:hover {
-      background: #ffeb70;
+      background: #ff61ff;
+      box-shadow: 0 0 20px #ff61ff, 0 0 40px #00fff7;
       transform: scale(1.05);
     }
 
     /* ---------- NEWS WHEEL ---------- */
     .news-wheel {
-      background: #222;
-      color: #fff;
+      background: rgba(0,0,0,0.5);
+      color: #00fff7;
       overflow: hidden;
       white-space: nowrap;
-      height: 35px;
+      height: 40px;
       display: flex;
       align-items: center;
       justify-content: center;
       z-index: 2;
       position: relative;
+      box-shadow: 0 0 10px #00fff7;
+      font-weight: 600;
     }
 
     .news-content {
       display: inline-block;
-      animation: scroll 18s linear infinite;
+      animation: scroll 20s linear infinite;
     }
 
     @keyframes scroll {
@@ -128,7 +138,8 @@
     /* ---------- NOTICE BOARD ---------- */
     #notice-board h2 {
       margin-bottom: 20px;
-      color: maroon;
+      color: #ff61ff;
+      text-shadow: 0 0 5px #00fff7;
     }
 
     .notice-section {
@@ -139,51 +150,63 @@
     }
 
     .notice-card {
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
-      padding: 20px;
+      background: rgba(0,0,0,0.6);
+      border-radius: 15px;
+      padding: 25px;
       width: 300px;
       transition: transform 0.3s;
+      box-shadow: 0 0 15px #00fff7;
     }
 
     .notice-card:hover {
       transform: translateY(-5px);
+      box-shadow: 0 0 25px #ff61ff;
     }
 
     .notice-card h3 {
-      color: maroon;
-      margin-bottom: 8px;
+      color: #00fff7;
+      margin-bottom: 10px;
+      text-shadow: 0 0 5px #ff61ff;
     }
 
     .notice-card a {
       display: inline-block;
-      margin-top: 8px;
-      color: white;
-      background: maroon;
-      padding: 6px 12px;
-      border-radius: 5px;
+      margin-top: 10px;
+      color: #0c0c0c;
+      background: #00fff7;
+      padding: 8px 16px;
+      border-radius: 8px;
       text-decoration: none;
+      font-weight: 600;
+      box-shadow: 0 0 10px #00fff7;
+      transition: 0.3s;
     }
 
     .notice-card a:hover {
-      background: #b30000;
+      background: #ff61ff;
+      box-shadow: 0 0 15px #ff61ff;
+      color: #fff;
     }
 
     /* ---------- ABOUT ---------- */
     #about {
-      background: #fff5f5;
+      background: rgba(0,0,0,0.3);
+      padding: 80px 15px;
+      border-radius: 20px;
+      box-shadow: 0 0 30px #00fff7 inset;
     }
 
     #about h2 {
-      color: maroon;
+      color: #ff61ff;
       margin-bottom: 20px;
+      text-shadow: 0 0 5px #00fff7;
     }
 
     #about p {
       max-width: 800px;
       margin: auto;
-      line-height: 1.7;
+      line-height: 1.8;
+      color: #c0f5ff;
     }
 
     /* ---------- GALLERY ---------- */
@@ -193,27 +216,30 @@
     }
 
     #gallery h2 {
-      color: maroon;
+      color: #ff61ff;
       margin-bottom: 20px;
+      text-shadow: 0 0 5px #00fff7;
     }
 
     .gallery-track {
       display: flex;
       width: max-content;
-      animation: scrollGallery 60s linear infinite; /* Slower scroll */
+      animation: scrollGallery 60s linear infinite;
     }
 
     .gallery-track img {
       width: 220px;
       height: 150px;
       margin: 10px;
-      border-radius: 10px;
+      border-radius: 15px;
       object-fit: cover;
-      transition: transform 0.3s;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 0 10px #00fff7;
     }
 
     .gallery-track img:hover {
       transform: scale(1.05);
+      box-shadow: 0 0 20px #ff61ff;
     }
 
     @keyframes scrollGallery {
@@ -223,58 +249,45 @@
 
     /* ---------- CONTACT ---------- */
     #contact h2 {
-      color: maroon;
+      color: #ff61ff;
       margin-bottom: 15px;
+      text-shadow: 0 0 5px #00fff7;
     }
 
     #contact p {
       margin-bottom: 10px;
+      color: #c0f5ff;
+    }
+
+    #contact a {
+      color: #00fff7;
+      text-decoration: none;
+    }
+
+    #contact a:hover {
+      color: #ff61ff;
+      text-decoration: underline;
     }
 
     /* ---------- FOOTER ---------- */
     footer {
-      background: #222;
-      color: white;
+      background: rgba(0,0,0,0.6);
+      color: #00fff7;
       text-align: center;
-      padding: 12px 0;
+      padding: 15px 0;
       font-size: 0.9rem;
+      box-shadow: 0 0 10px #00fff7;
     }
 
     footer a {
-      color: gold;
+      color: #00fff7;
       text-decoration: none;
       margin: 0 6px;
     }
 
     footer a:hover {
+      color: #ff61ff;
       text-decoration: underline;
-    }
-
-    /* ---------- MOVING MANDALA BACKGROUND ---------- */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      width: 250%;
-      height: 250%;
-      background: radial-gradient(circle at center, #f0e6ff 10%, #d0bfff 40%, #ffd9b3 70%, #f0e6ff 90%);
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 0;
-      opacity: 0.15;
-      animation: rotateMandala 90s linear infinite, pulseMandala 6s ease-in-out infinite alternate;
-    }
-
-    @keyframes rotateMandala {
-      from { transform: translate(-50%, -50%) rotate(0deg); }
-      to { transform: translate(-50%, -50%) rotate(360deg); }
-    }
-
-    @keyframes pulseMandala {
-      0% { transform: translate(-50%, -50%) scale(0.95); }
-      50% { transform: translate(-50%, -50%) scale(1.05); }
-      100% { transform: translate(-50%, -50%) scale(0.95); }
     }
 
     /* ---------- PARTICLE BACKGROUND ---------- */
@@ -359,11 +372,7 @@
   <!-- GALLERY -->
   <section id="gallery">
     <h2>Gallery</h2>
-    <div class="gallery-track">
-      <img src="gallery/img1.png" alt="Event Photo 1">
-      <img src="gallery/img2.png" alt="Event Photo 2">
-      <img src="gallery/img3.png" alt="Event Photo 3">
-      <img src="gallery/img4.png" alt="Event Photo 4">
+    <div class="gallery-track" id="gallery-track">
       <img src="gallery/img1.png" alt="Event Photo 1">
       <img src="gallery/img2.png" alt="Event Photo 2">
       <img src="gallery/img3.png" alt="Event Photo 3">
@@ -389,6 +398,7 @@
 
   <!-- ---------- PARTICLE JS ---------- -->
   <script>
+    // ---------- PARTICLE BACKGROUND ----------
     const canvas = document.getElementById("particle-bg");
     const ctx = canvas.getContext("2d");
 
@@ -408,44 +418,52 @@
         this.size = Math.random() * 3 + 1;
         this.speedY = Math.random() * 1 + 0.2;
         this.speedX = Math.random() * 0.5 - 0.25;
-        this.opacity = Math.random() * 0.3 + 0.1;
+        this.opacity = Math.random() * 0.5 + 0.3;
+        this.color = `rgba(${Math.floor(Math.random()*255)}, ${Math.floor(Math.random()*255)}, 255, ${this.opacity})`;
       }
       update() {
         this.y += this.speedY;
         this.x += this.speedX;
-        if (this.y > canvas.height) {
-          this.y = -this.size;
-          this.x = Math.random() * canvas.width;
-        }
+        if (this.y > canvas.height) this.y = -this.size;
         if (this.x > canvas.width) this.x = 0;
         if (this.x < 0) this.x = canvas.width;
       }
       draw() {
-        ctx.fillStyle = "rgba(255, 182, 193," + this.opacity + ")"; // soft pink particles
+        ctx.fillStyle = this.color;
+        ctx.shadowColor = this.color;
+        ctx.shadowBlur = 8;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.fill();
       }
     }
 
-    function init() {
+    function initParticles() {
       particlesArray = [];
-      const numberOfParticles = Math.floor(window.innerWidth / 10);
-      for (let i = 0; i < numberOfParticles; i++) {
+      const num = Math.floor(window.innerWidth / 6);
+      for (let i = 0; i < num; i++) {
         particlesArray.push(new Particle());
       }
     }
-    init();
+    initParticles();
 
-    function animate() {
+    function animateParticles() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      for (let particle of particlesArray) {
-        particle.update();
-        particle.draw();
+      for (let p of particlesArray) {
+        p.update();
+        p.draw();
       }
-      requestAnimationFrame(animate);
+      requestAnimationFrame(animateParticles);
     }
-    animate();
+    animateParticles();
+
+    // ---------- GALLERY INFINITE LOOP ----------
+    const galleryTrack = document.getElementById('gallery-track');
+    const galleryImages = Array.from(galleryTrack.children);
+    galleryImages.forEach(img => {
+      const clone = img.cloneNode(true);
+      galleryTrack.appendChild(clone);
+    });
   </script>
 </body>
 </html>
